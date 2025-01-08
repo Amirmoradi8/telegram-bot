@@ -2,7 +2,7 @@ import telebot
 import os
 from googletrans import Translator
 
-API_TOKEN = '7402774915:AAE7h-yNvMxxHKE8UfCf16slajYpQ48YYfw'
+API_TOKEN = os.environ.get('API_TOKEN')
 
 bot = telebot.TeleBot(API_TOKEN)
 translate = Translator()
@@ -27,5 +27,4 @@ def translate_command(message):
     translated_text= translate.translate(text , dest=language).text
     bot.reply_to(message, translated_text)
 
-# bot.infinity_polling()
 bot.infinity_polling()
