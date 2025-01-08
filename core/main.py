@@ -1,8 +1,11 @@
 import telebot
+from googletrans import Translator
 
 API_TOKEN = '7402774915:AAE7h-yNvMxxHKE8UfCf16slajYpQ48YYfw'
 
 bot = telebot.TeleBot(API_TOKEN)
+
+translate = Translator()
 
 
 @bot.message_handler(commands=['start'])
@@ -16,6 +19,7 @@ def help_Bot(message):
 
 @bot.message_handler(func=lambda message:True)
 def wellcome_mesage(message):
-    bot.reply_to(message , 'salammmmmmm')
+    translated_text = translate.translate(message.text , src='en' , dest='fa')
+    bot.reply_to(message , translated_text.text)
 
 bot.infinity_polling()
