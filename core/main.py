@@ -17,7 +17,7 @@ def help_Bot(message):
     bot.reply_to(message , 'برای آگاهی زبان های  قابل استفاده کلید /help_translate را بزنید')
 @bot.message_handler(commands=['help_translate'])
 def help2_bot(message):
-    bot.reply_to(message, '<img src="https://media.geeksforgeeks.org/wp-content/uploads/20200430163105/google-trans-python.png" alt="google-trans-python" width="inherit" height="inherit">')
+    bot.reply_to(message, '<img src=https://media.geeksforgeeks.org/wp-content/uploads/20200430163105/google-trans-python.png')
     bot.reply_to(message , 'ربات برای شما آماده کار است\nلطفا عبارت مد نظر خود را ارسال کنید تا در کمترین زمان برای شما ترجمه شود:')
 @bot.message_handler(func=lambda message:True)
 def translate_command(message):
